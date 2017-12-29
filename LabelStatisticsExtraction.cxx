@@ -63,13 +63,13 @@ int DoIt( int argc, char * argv[], T )
     ImageIteratorType imgIt(readerImage->GetOutput(), readerImage->GetOutput()->GetRequestedRegion());
     LabelIteratorType lblIt(readerLabel->GetOutput(), readerLabel->GetOutput()->GetRequestedRegion());
 
-    lblIt.GoToBegin();
-    while(!lblIt.IsAtEnd()){
-        imgIt.SetIndex(lblIt.GetIndex());
-        if(lblIt.Get()>0 && imgIt.Get()==0)
-            lblIt.Set(0);
-        ++lblIt;
-    }
+//    lblIt.GoToBegin();
+//    while(!lblIt.IsAtEnd()){
+//        imgIt.SetIndex(lblIt.GetIndex());
+//        if(lblIt.Get()>0 && imgIt.Get()==0)
+//            lblIt.Set(0);
+//        ++lblIt;
+//    }
 
     // Computes the mean and variance for labels
     typedef itk::LabelStatisticsImageFilter<ImageType, LabelType> StatisticsFilterType;
